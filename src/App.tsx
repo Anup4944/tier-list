@@ -147,7 +147,8 @@ export default function App() {
     });
   };
 
-  const handleDragEnd = (_e: DragEndEvent) => {
+  const handleDragEnd = (e: DragEndEvent) => {
+    console.log(e);
     setActiveDraggable(undefined);
   };
   const freeDropZone = dropZones.find((dz) => dz.id === "free");
