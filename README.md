@@ -1,73 +1,97 @@
-# React + TypeScript + Vite
+# 🏆 Tier List App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fast, drag-and-drop tier list builder built with **React**, **TypeScript**, **Tailwind CSS**, and **dnd kit**.
 
-Currently, two official plugins are available:
+![React](https://img.shields.io/badge/React-18+-61DAFB?style=flat-square&logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-5+-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3+-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-5+-646CFF?style=flat-square&logo=vite&logoColor=white)
+![dnd kit](https://img.shields.io/badge/dnd_kit-latest-FF4154?style=flat-square)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🖱️ **Drag & Drop** — Smooth, accessible drag-and-drop powered by dnd kit
+- 🎨 **Custom Tiers** — Add, remove, and rename tier rows (S, A, B, C, D... or your own labels)
+- 📦 **Item Management** — Add items to an unranked pool, then drag them into tiers
+- ♿ **Accessible** — Keyboard navigation and screen reader support via dnd kit's accessibility layer
+- ⚡ **Fast** — Vite-powered dev server and optimised production builds
+- 🔒 **Type-safe** — Fully typed with TypeScript throughout
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Getting Started
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Prerequisites
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- [Node.js](https://nodejs.org/) v18 or higher
+- npm, yarn, or pnpm
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/Anup4944/tier-list.git
+cd tier-list
+
+# Install dependencies
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Running Locally
+```bash
+npm run dev
 ```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+### Building for Production
+```bash
+npm run build
+```
+
+The output will be in the `dist/` folder, ready to deploy to any static host.
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| [React 18+](https://react.dev/) | UI component library |
+| [TypeScript](https://www.typescriptlang.org/) | Static typing |
+| [Vite](https://vitejs.dev/) | Bundler & dev server |
+| [Tailwind CSS](https://tailwindcss.com/) | Utility-first styling |
+| [dnd kit](https://dndkit.com/) | Drag-and-drop primitives |
+
+### dnd kit hooks used
+
+- `useDraggable` — Makes items draggable
+- `useDroppable` — Designates tier rows as drop targets
+- `DndContext` / `DragOverlay` — Global drag state and overlay rendering
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+---
+
+## 📄 License
+
+Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information.
+
+---
+
+## 🙏 Acknowledgements
+
+- [dnd kit](https://dndkit.com/) — for the excellent drag-and-drop primitives
+- [Tailwind CSS](https://tailwindcss.com/) — for making styling a joy
+- [Vite](https://vitejs.dev/) — for the lightning-fast dev experience
