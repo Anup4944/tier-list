@@ -272,7 +272,7 @@ function DraggableContent({
   const activeDraggableId = useAtomValue(activeDraggableAtom)?.id;
   return (
     <img
-      src={`/src/assets/${src}`}
+      src={`/assets/${src}`}
       alt={id}
       style={{
         opacity: isDragging || activeDraggableId !== id ? 1 : 0.5,
