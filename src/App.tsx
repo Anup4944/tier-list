@@ -4,9 +4,10 @@ import {
   DragOverlay,
   useDroppable,
   type DragEndEvent,
+  type DragOverEvent,
+  type DragStartEvent,
 } from "@dnd-kit/core";
 import { arrayMove, SortableContext, useSortable } from "@dnd-kit/sortable";
-import type { DragOverEvent, DragStartEvent } from "@dnd-kit/dom";
 import { atom, useAtom, useAtomValue } from "jotai";
 
 type Draggable = {
@@ -47,7 +48,7 @@ const dropZoneIds = defaultDropZone.map((dz) => dz.id);
 const activeDraggableAtom = atom<Draggable>();
 
 export default function App() {
-  const [draggables, setDraggables] = useState(defaultDraggables);
+  const [draggables] = useState(defaultDraggables);
   const [dropZones, setDropZones] = useState<DropZone[]>(defaultDropZone);
   const [activeDraggable, setActiveDraggable] = useAtom(activeDraggableAtom);
 
@@ -146,7 +147,7 @@ export default function App() {
     });
   };
 
-  const handleDragEnd = (e: DragEndEvent) => {
+  const handleDragEnd = (_e: DragEndEvent) => {
     setActiveDraggable(undefined);
   };
   const freeDropZone = dropZones.find((dz) => dz.id === "free");
